@@ -1,0 +1,38 @@
+<table class="table table-striped">
+    <thead> 
+        <tr>
+            <th>id</th>
+            <th>nome</th>
+            <th>cpf</th>
+            <th>dataNascimento</th>
+            <th>email</th>
+            <th>genero</th>
+            <th>naturalidade</th>
+            <th>nacionalidade</th>
+            <th>Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let dataItem of persons">
+            <td>{{dataItem.id}}</td>
+            <td>{{dataItem.nome}}</td>
+            <td>{{dataItem.cpf}}</td>
+            <td>{{dataItem.email}}</td>
+            <td>{{dataItem.dataNascimento}}</td>
+            <td>{{dataItem.genero}}</td>
+            <td>{{dataItem.naturalidade}}</td>
+            <td>{{dataItem.nacionalidade}}</td>
+            <td>
+                <button type="button" class="btn btn-light mr-1">
+                    Edit
+                </button>
+
+                <button type="button" class="btn btn-light mr-1">
+                    Delete
+                </button>
+            </td>
+        </tr>
+        
+    </tbody>
+
+</table>
