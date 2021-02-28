@@ -1,8 +1,9 @@
+import { logging } from 'protractor';
 import { Injectable } from '@angular/core';
-
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import Pessoa from "./Model/Pessoa";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {from, Observable} from 'rxjs';
+import  { Pessoa } from "./Model/Pessoa";
+import {catchError, take} from 'rxjs/operators';
 
 
 @Injectable({
@@ -13,24 +14,28 @@ export class SharedService {
   readonly APIUrl = "http://localhost:8080/pessoa";
   
    public pessoas : Pessoa[]=[];
+   
 
   constructor(private http : HttpClient) { }
 
-getPessoaList():Observable<Pessoa[]>{
+public getPessoaList():Observable<Pessoa[]>{
   return this.http.get<Pessoa[]>(this.APIUrl+"/lista");
 }
 
-
- addPessoa(val:Pessoa){
-    return this.http.post(this.APIUrl,val);
+   public updatePessoa(pessoa:any):Observable<any>{
+    return this.http.put(this.APIUrl, pessoa);
   }
 
-  updatePessoa(val:Pessoa){
-    return this.http.put(this.APIUrl,val);
+  public deletePessoa(id:any){
+    return this.http.delete(this.APIUrl+id);
+  
   }
 
-  deletePessoa(val:Pessoa){
-    return this.http.delete(this.APIUrl+val)
-  }
+   public addPessoa(pessoa: any):Observable<any>{
+      return this.http.post<Pessoa>(this.APIUrl,pessoa);
+
+
+    }
 
 }
+  

@@ -1,20 +1,33 @@
+import { identifierModuleUrl } from '@angular/compiler';
+import { Genero } from './Genero';
 
-import {Moment} from 'moment';
+
+export  class Pessoa {
 
 
-export default interface Pessoa {
-	id: number;
+    constructor (id:number,nome:string,cpf:string,email:string,dataNascimento:Date,genero:Genero,naturalidade:string,nacionalidade:string ){
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+        this.dataNascimento = dataNascimento;
+        this.genero = genero;
+        this.naturalidade = nacionalidade;
+        this.nacionalidade = nacionalidade;
+    }
+
+    id?: number;
     nome: string;
-    cpf:string;
-    email:string;
-    dataNascimento: Moment;
-	genero: Genero;
+    cpf: string;
+    email: string;
+    dataNascimento: Date;
+    genero: Genero;
     naturalidade: string;
-    nacionalidade:string;
+    nacionalidade: string; 
+    
+
 }
 
-enum Genero {
-    MASCULINO,
-    FEMININO
-}
+
+
 
