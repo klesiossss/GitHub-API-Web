@@ -7,9 +7,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Run `ng serve --open` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 
-## Esse front End so permite a visualizacao dos dados que consome da API GitHub-API que esta rodando na Google Cloud Platform ate esse momento pelo endereco: http://34.72.199.87/dev . 
+## O front End so permite a visualizacao dos dados que consome da API GitHub-API que esta rodando na Google Cloud Platform no endereco: http://34.72.199.87/dev ; mais informacao do backEnd veja o ReadMe do repositorio GitHub-API . 
 
-###Alternativa 2 de rodar o Front End
+##Alternativa 2 de rodar o Front End
 
 ## Referente as alternativas de rodar o FrontEnd eh via Docker Hub, baixe a imagem com o comando : docker pull klesio123/angular-app-developer:latest
 
