@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 
 
 const routes: Routes = [
-  {path:'pessoa', component : PessoaComponent}
+  {path:'dev', component : PessoaComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes),CommonModule],

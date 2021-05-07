@@ -1,4 +1,3 @@
-import { SharedService } from './shared.service';
 import { Component } from '@angular/core';
 
 
@@ -8,11 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CadastroDePessoas';
+  
 
-  constructor(private sharedService:SharedService){
-    this.sharedService.getPessoaList().subscribe(data=>{
-      console.warn(data);
-    })
-  }
+
 }

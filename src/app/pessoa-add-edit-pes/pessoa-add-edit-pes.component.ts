@@ -2,7 +2,7 @@ import { SharedService } from './../shared.service';
 import { PessoaShowPesComponent } from './../pessoa-show-pes/pessoa-show-pes.component';
 import { Component, Input, OnInit } from '@angular/core';
 import { Pessoa } from '../Model/Pessoa';
-import { Genero } from '././../Model/Genero';
+
 
 @Component({
   selector: 'app-pessoa-add-edit-pes',
@@ -13,13 +13,10 @@ export class PessoaAddEditPesComponent implements OnInit {
     
  @Input() pes:any;
   id!: string;
-  nome!:string;
-  cpf!:string;
-  email!:string;
-  dataNascimento!:string;
-  genero!: string;
-  nacionalidade!:string;
-  naturalidade!:string;
+  login!:string;
+  follower!:string;
+  publicRepo!:string;
+ 
 
   
 
@@ -28,13 +25,9 @@ export class PessoaAddEditPesComponent implements OnInit {
   
   ngOnInit(): void {
     this.id=this.pes.id;
-    this.nome = this.pes.nome;
-    this.cpf = this.pes.cpf;
-    this.email = this.pes.email;
-    this.genero = this.pes.genero;
-    this.dataNascimento=this.pes.dataNascimento;
-    this.naturalidade = this.pes.naturalidade;
-    this.nacionalidade = this.pes.nacionalidade;
+    this.login = this.pes.login;
+    this.follower = this.pes.follower;
+    this.publicRepo = this.pes.publicRepo;
 
     this.refreshPessoas();
   
@@ -52,13 +45,9 @@ export class PessoaAddEditPesComponent implements OnInit {
   public addPessoa(){
     var val={
       id:this.id,
-      nome:this.nome,
-      cpf:this.cpf,
-      email:this.email,
-      genero:this.genero,
-      dataNascimento:this.dataNascimento,
-      naturalidade:this.naturalidade,
-      nacionalidade:this.nacionalidade
+      login:this.login,
+      follower:this.follower,
+      publicRepo : this.publicRepo
     }
 
    var res = this.service.addPessoa(val).subscribe(res =>{
@@ -73,13 +62,10 @@ export class PessoaAddEditPesComponent implements OnInit {
   public updatePessoa(){
     var val={
       id : this.id,
-      nome : this.nome,
-      cpf : this.cpf,
-      genero : this.genero,
-      email : this.email,
-      dataNascimento : this.dataNascimento,
-      naturalidade : this.naturalidade,
-      nacionalidade : this.nacionalidade
+      login : this.login,
+      follower : this.follower,
+      publicRepo : this.publicRepo
+      
     }
     var res = this.service.updatePessoa(val).subscribe(res =>{
         alert(res.toString());

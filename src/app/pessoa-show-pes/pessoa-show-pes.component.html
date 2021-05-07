@@ -4,7 +4,7 @@
  data-toggle="modal" data-target="#exampleModal" 
  (click)="addClick()"
  data-backdrop="static" data-keyboard="false" >
-  Add Pessoa
+  Add Developer
   </button>
   
   <!-- Modal -->
@@ -34,37 +34,29 @@
     <thead> 
         <tr>
             <th>id</th>
-            <th>nome</th>
-            <th>cpf</th>
-            <th>dataNascimento</th>
-            <th>email</th>
-            <th>genero</th>
-            <th>naturalidade</th>
-            <th>nacionalidade</th>
+            <th>login</th>
+            <th>follower</th>
+            <th>publicRepo</th>
             <th>Options</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor = "let dataItem of persons">
-            <td>{{dataItem.id}}</td>
-            <td>{{dataItem.nome}}</td>
-            <td>{{dataItem.cpf}}</td>
-            <td>{{dataItem.email}}</td>
-            <td>{{dataItem.dataNascimento}}</td>
-            <td>{{dataItem.genero}}</td>
-            <td>{{dataItem.naturalidade}}</td>
-            <td>{{dataItem.nacionalidade}}</td>
+        <tr *ngFor = "let dev of persons">
+            <td>{{dev.id}}</td>
+            <td>{{dev.login}}</td>
+            <td>{{dev.followers}}</td>
+            <td>{{dev.publicRepos}}</td>
             <td>
                <button type="button" class="btn btn-primary - float-right m-2" 
                 data-toggle="modal" data-target="#exampleModal" 
-                 (click)="aditClick(dataItem)"
+                 (click)="aditClick(dev)"
                  data-backdrop="static" data-keyboard="false" >
-                 Adit 
+                 Edit 
             </button>
    
             <button type="button" class="btn btn-light mr-1"
             
-                (click)="deleteClick(dataItem.cpf)"
+                (click)="deleteClick(dev.id)"
                 >
                     Delete
                 </button>

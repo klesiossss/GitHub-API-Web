@@ -1,29 +1,22 @@
-import { identifierModuleUrl } from '@angular/compiler';
-import { Genero } from './Genero';
+
+export class Pessoa {
 
 
-export  class Pessoa {
-
-
-    constructor (id:number,nome:string,cpf:string,email:string,dataNascimento:Date,genero:Genero,naturalidade:string,nacionalidade:string ){
+    public constructor (id:number,login:string, publicRepos:number,followers:number){
         this.id = id;
-        this.nome = nome;
-        this.cpf = cpf;
-        this.email = email;
-        this.dataNascimento = dataNascimento;
-        this.genero = genero;
-        this.naturalidade = nacionalidade;
-        this.nacionalidade = nacionalidade;
+        this.login = login;
+        this.followers = followers;
+        this.publicRepos = publicRepos;
+  
     }
 
-    id?: number;
-    nome: string;
-    cpf: string;
-    email: string;
-    dataNascimento: Date;
-    genero: Genero;
-    naturalidade: string;
-    nacionalidade: string; 
+
+
+    id!: number;
+    login: string;
+    followers: number;
+    publicRepos: number;
+    
     
 
 }

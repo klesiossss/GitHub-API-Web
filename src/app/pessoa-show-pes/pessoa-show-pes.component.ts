@@ -1,9 +1,9 @@
-import { Moment } from 'moment';
+
  
 import { SharedService } from './../shared.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Pessoa } from "./../Model/Pessoa";
-import { Genero } from '../Model/Genero';
+
 
 
 @Component({
@@ -23,18 +23,16 @@ export class PessoaShowPesComponent implements OnInit {
 
   ngOnInit(): void {
     this.refreshPesList();
+    console.log(this.refreshPesList());
   }
 
   addClick(){
     this.pes = {
       id : 0,
-      nome : "",
-      cpf: "",
-      email: "",
-      dataNasc: new Date(),
-      genero: Genero.MASCULINO,
-      naturalidade:"",
-      nacionalidade:""
+      login : "",
+      follower: 0,
+      publicRepo: 0
+
     }
     this.ModalTitle = "Add Pessoa";
     this.ActivateAddEditPesComp = true;
@@ -53,7 +51,7 @@ export class PessoaShowPesComponent implements OnInit {
 
 
   refreshPesList(){
-    this.service.getPessoaList().subscribe( (data:any) => {
+    this.service.getPessoaList().subscribe( data => {
       this.persons = data;
     })
   }

@@ -3,45 +3,22 @@
     
     <div>
         <div>
-        <label class ="col-sm-2 col-form-label">Nome</label>
-        <input type="text" class="form-control"  [(ngModel)] = "nome"
-        placeholder="Digite Seu Nome Completo">
+        <label class ="col-sm-2 col-form-label">login</label>
+        <input type="text" class="form-control"  [(ngModel)] = "login"
+        placeholder="Digite o nome do login">
         </div>
         <div>
-        <label class ="col-sm-2 col-form-label">Cpf</label>
-        <input type="text" class="form-control" [(ngModel)] = "cpf" 
-        placeholder="Digite o seu Cpf">
-        </div>
-
-        <div>
-        <label class ="col-sm-2 col-form-label"> dataNascimento</label>
-        <input type="text" class="form-control" [(ngModel)] = "dataNascimento" 
-        placeholder="Digite a sua nacionalidade">
+        <label class ="col-sm-2 col-form-label">follower</label>
+        <input type="text" class="form-control" [(ngModel)] = "follower" 
+        placeholder="Digite quantos seguidores">
         </div>
 
         <div>
-        <label class ="col-sm-2 col-form-label"> E-mail</label>
-        <input type="text" class="form-control" [(ngModel)] = "email" 
-        placeholder="Digite o seu E-mail">
+        <label class ="col-sm-2 col-form-label"> publicRepo</label>
+        <input type="text" class="form-control" [(ngModel)] = "publicRepo" 
+        placeholder="Digite quantos repositorios">
         </div>
 
-        <div>
-        <label class ="col-sm-2 col-form-label"> Nacionalidade</label>
-        <input type="text" class="form-control" [(ngModel)] = "nacionalidade" 
-        placeholder="Digite a sua Nacionalidade">
-        </div>
-
-        <div>
-            <label class ="col-sm-2 col-form-label"> Genero</label>
-            <input type="text" class="form-control" [(ngModel)] = "genero" 
-            placeholder="Digite o genero">
-            </div>
-        
-            <div>
-        <label class ="col-sm-2 col-form-label"> Naturalidade</label>
-        <input type="text" class="form-control" [(ngModel)] = "naturalidade" 
-        placeholder="Digite Seu Nome Completo">       
-            </div>,
         
         <button (click)="addPessoa()" *ngIf="pes.id ==0" class="btn btn-primary" >
             Add

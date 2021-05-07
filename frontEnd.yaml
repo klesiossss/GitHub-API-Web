@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-end-developer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: front-end-developer
+  template:
+    metadata:
+      labels: 
+        app: front-end-developer
+    spec:                     
+      containers: 
+      - name: front-end-developer
+        image: klesio123/angular-app-developer
+        ports:
+        - containerPort: 8080
